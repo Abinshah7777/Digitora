@@ -1,0 +1,9 @@
+package com.agency.digital_agency.Repository;
+
+import com.agency.digital_agency.model.ContactInquiry;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ContactInquiryRepository extends JpaRepository<ContactInquiry, Long> {
+}

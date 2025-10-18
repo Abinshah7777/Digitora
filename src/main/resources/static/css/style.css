@@ -1,0 +1,379 @@
+/* ============================================= */
+/* === Basic Setup & Variables === */
+/* ============================================= */
+:root {
+    --primary-color: #0a192f;   /* A dark navy blue */
+    --secondary-color: #64ffda; /* A bright teal/mint */
+    --text-color: #ccd6f6;      /* A light, soft blue-white */
+    --text-color-dark: #8892b0; /* A darker grey for subtitles */
+}
+
+/* A simple reset for consistent box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+
+/* ============================================= */
+/* === Layout & Reusable Classes === */
+/* ============================================= */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto; /* This centers the container */
+    padding: 2rem 0;
+}
+
+
+/* ============================================= */
+/* === Header & Navigation === */
+/* ============================================= */
+header {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ffffff1a;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* ============================================= */
+/* === General Typography === */
+/* ============================================= */
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+/* ============================================= */
+/* === Header & Navigation (Updates) === */
+/* ============================================= */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a.active {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+
+/* ============================================= */
+/* === Hero Section (for index.html) === */
+/* ============================================= */
+#hero {
+    min-height: 70vh; /* Make the hero section take up a good portion of the screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 3.5rem; /* Large, impactful title */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color-dark);
+    margin-bottom: 2.5rem;
+}
+
+
+/* ============================================= */
+/* === Buttons === */
+/* ============================================= */
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+
+/* ============================================= */
+/* === Footer === */
+/* ============================================= */
+footer {
+    border-top: 1px solid #ffffff1a;
+    padding: 1.5rem 0;
+}
+
+.footer-content {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color-dark);
+}
+/* ============================================= */
+/* === General Page Styles (for Services, Portfolio etc.) === */
+/* ============================================= */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+
+/* === Grid Container (for Services & Portfolio) === */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: stretch; /* ADD THIS LINE */
+}
+/* Sizing for items inside the flex container to make them act like a grid */
+.service-card, .portfolio-card {
+    flex-grow: 1;           /* Allow cards to grow to fill space on a full row */
+    flex-basis: 300px;      /* Set their ideal starting width to 300px */
+    max-width: 400px;       /* IMPORTANT: Prevent the last item from stretching full-width */
+}
+.service-card {
+    background-color: #112240; /* A slightly lighter navy */
+    padding: 2rem;
+    border-radius: 4px;
+    border: 1px solid #ffffff1a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -15px #000000a6;
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-color-dark);
+}
+/* ============================================= */
+/* === Portfolio Cards === */
+/* ============================================= */
+.portfolio-card {
+    background-color: #112240;
+    border-radius: 4px;
+    overflow: hidden; /* Ensures the image corners are rounded */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffffff1a;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.portfolio-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to fill available space */
+}
+
+.portfolio-card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.portfolio-card-content p {
+    color: var(--text-color-dark);
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Pushes the links to the bottom */
+}
+
+.portfolio-category-tag {
+    align-self: flex-start; /* Aligns the tag to the left */
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.portfolio-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.portfolio-link:hover {
+    text-decoration: underline;
+}
+/* ============================================= */
+/* === Contact Form === */
+/* ============================================= */
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto; /* Center the form container */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-dark);
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #112240; /* Slightly lighter navy */
+    border: 1px solid #ffffff1a;
+    border-radius: 4px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+#form-status {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+#form-status.success {
+    color: var(--secondary-color);
+}
+
+#form-status.error {
+    color: #ff6464; /* A reddish error color */
+}
+/* ============================================= */
+/* === About Page === */
+/* ============================================= */
+.about-section {
+    max-width: 800px; /* Constrain the width of text for readability */
+    margin: 0 auto 3.5rem auto; /* Center the sections and add space between them */
+    text-align: center;
+}
+
+.about-section h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: var(--text-color-dark);
+    line-height: 1.8;
+}
+
+/* Team Grid Styles */
+.team-grid {
+    display: grid;
+    /* This will create a 2-column layout on wider screens and a 1-column layout on smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member-card {
+    text-align: center;
+    background-color: #112240; /* Add a subtle background to the card */
+    padding: 2rem;
+    border-radius: 4px;
+}
+
+.team-member-card h4 {
+    font-size: 1.5rem; /* Make the name a bit bigger */
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.team-member-card .team-member-role {
+    font-size: 1.1rem; /* Make the role a bit bigger */
+    color: var(--secondary-color); /* Use the highlight color for the role */
+}

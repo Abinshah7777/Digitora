@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Digitora</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ======================= Header & Navigation ======================= -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Digitora</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ======================= Main Content ======================= -->
+    <main>
+        <div class="container">
+            <h2 class="page-title">Get In Touch</h2>
+            <div class="contact-container">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <!-- This div is for showing success or error messages -->
+                <div id="form-status"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======================= Footer ======================= -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 Digitora. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ======================= JavaScript ======================= -->
+    <!-- We will create this file in the next step -->
+    <script src="js/contact.js"></script>
+</body>
+</html>
