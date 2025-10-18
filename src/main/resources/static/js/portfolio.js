@@ -1,8 +1,12 @@
+// Define the base URL for your live backend API
+const API_BASE_URL = 'https://digitora-backend.onrender.com';
+
 document.addEventListener('DOMContentLoaded', () => {
     
     const portfolioGrid = document.getElementById('portfolio-grid');
 
-    fetch('/api/portfolio')
+    // Fetch the portfolio data from our backend API, using the full URL
+    fetch(`${API_BASE_URL}/api/portfolio`) // <-- THIS IS THE MODIFIED LINE
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

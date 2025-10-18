@@ -5,11 +5,12 @@ import com.agency.digital_agency.service.CategoryService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 
 @RestController // Marks this class as a REST Controller
 @RequestMapping("/api/categories") // All endpoints in this class will start with this URL
+@CrossOrigin(origins = "*")
 public class CategoryController {
 
     private final CategoryService categoryService;
