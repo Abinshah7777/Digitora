@@ -1,5 +1,4 @@
-// Define the base URL for your live backend API
-const API_BASE_URL = 'https://digitora-backend.onrender.com';
+
 
 // This function runs when the page is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const servicesGrid = document.getElementById('services-grid');
 
     // Fetch the service data from our backend API, using the full URL
-    fetch(`${API_BASE_URL}/api/services`) // <-- THIS IS THE MODIFIED LINE
+    fetch('/api/services')
         .then(response => {
             // Check if the request was successful
             if (!response.ok) {

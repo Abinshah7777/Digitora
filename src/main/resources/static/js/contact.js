@@ -1,5 +1,4 @@
-// Define the base URL for your live backend API
-const API_BASE_URL = 'https://digitora-backend.onrender.com';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
@@ -19,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const formObject = Object.fromEntries(formData.entries());
 
         // Send the data to the backend API using a POST request, with the full URL
-        fetch(`${API_BASE_URL}/api/contact`, { // <-- THIS IS THE MODIFIED LINE
+        fetch('/api/portfolio'), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formObject),
-        })
+        }
         .then(response => {
             if (!response.ok) {
                 // If the server responds with an error status, throw an error
