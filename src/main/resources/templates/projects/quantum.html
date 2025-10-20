@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Analytics Dashboard - Digitora Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section {
+            margin: 3rem 0;
+        }
+        .section h2 {
+            color: #fa709a;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #fa709a;
+            padding-bottom: 0.5rem;
+        }
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .highlight {
+            background: #fff8f0;
+            padding: 1.5rem;
+            border-left: 4px solid #fa709a;
+            margin: 1.5rem 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fa709a;
+        }
+        .stat-card .label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-item {
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .feature-item h3 {
+            color: #fa709a;
+            margin-bottom: 0.5rem;
+        }
+        .cta {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .cta button {
+            background: white;
+            color: #fa709a;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .cta button:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #fa709a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a th:href="@{/portfolio}" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <header>
+        <h1>Quantum Analytics Dashboard</h1>
+        <p>Real-Time Financial Intelligence from Multiple Data Sources</p>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>
+                Quantum Analytics is a cutting-edge financial technology platform built for a major FinTech firm. The dashboard aggregates real-time data from multiple sources (stock exchanges, cryptocurrencies, forex markets) and presents complex financial information through intuitive visualizations, enabling traders and analysts to make data-driven decisions instantly.
+            </p>
+            <div class="highlight">
+                <strong>Challenge:</strong> Process and visualize 10+ terabytes of daily market data with sub-second latency. The existing solution couldn't handle peak loads and provided poor user experience. We needed to build a system that's both powerful and beautiful.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Metrics</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="number">50M+</div>
+                    <div class="label">Data Points Per Day</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">200ms</div>
+                    <div class="label">Data Latency</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">99.98%</div>
+                    <div class="label">Uptime SLA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">1000+</div>
+                    <div class="label">Concurrent Users</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Core Dashboard Features</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>📊 Real-Time Charts</h3>
+                    <p>Interactive candlestick, line, and area charts with smooth animations. Support for multiple timeframes (1m, 5m, 15m, 1h, daily, weekly).</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🔔 Custom Alerts</h3>
+                    <p>Set dynamic alerts based on price levels, technical indicators, volume changes, or custom formulas. Get instant notifications across all devices.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🛠️ Technical Indicators</h3>
+                    <p>50+ built-in indicators including RSI, MACD, Bollinger Bands, Fibonacci, and more. Fully customizable with user-defined parameters.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>💼 Portfolio Management</h3>
+                    <p>Track multiple portfolios with real-time P&L calculations, asset allocation visualization, and risk metrics.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📈 Advanced Analytics</h3>
+                    <p>Heatmaps, correlation matrices, sector analysis, and machine learning-powered anomaly detection.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🔐 Enterprise Security</h3>
+                    <p>Multi-factor authentication, role-based access control, end-to-end encryption, and comprehensive audit logging.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technical Architecture</h2>
+            <p>
+                <strong>Frontend:</strong> React with D3.js for complex visualizations, WebSocket for real-time updates<br>
+                <strong>Backend:</strong> Go microservices for high-throughput data processing, Apache Kafka for event streaming<br>
+                <strong>Database:</strong> InfluxDB for time-series data, PostgreSQL for transactional data, Redis for caching<br>
+                <strong>Data Pipeline:</strong> Apache Spark for batch processing, Flink for stream processing<br>
+                <strong>Infrastructure:</strong> Kubernetes on AWS with auto-scaling, multi-region deployment
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Performance Optimization</h2>
+            <div class="highlight">
+                <p>
+                    To handle the massive scale, we implemented several advanced techniques:
+                </p>
+                <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                    <li><strong>Data Compression:</strong> Custom compression algorithms reduce data transfer by 85%</li>
+                    <li><strong>Smart Caching:</strong> Multi-layer caching strategy with predictive pre-loading</li>
+                    <li><strong>Edge Computing:</strong> Process data at the edge to reduce latency</li>
+                    <li><strong>Lazy Loading:</strong> Progressive data loading as users interact with charts</li>
+                    <li><strong>GPU Acceleration:</strong> WebGL-based rendering for smooth animations with millions of data points</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Business Impact</h2>
+            <p>
+                The new dashboard transformed how the company operates:
+            </p>
+            <ul style="margin-left: 2rem; line-height: 2;">
+                <li>⚡ 95% faster data exploration compared to legacy system</li>
+                <li>💰 $8.2M in additional revenue from improved trading decisions</li>
+                <li>📱 User adoption rate of 98% among traders and analysts</li>
+                <li>🎯 Average trade execution time reduced from 45s to 3s</li>
+                <li>🔍 Improved anomaly detection leads to 34% fewer missed trading opportunities</li>
+                <li>📊 Detailed audit trails help compliance requirements (SOX, MiFID II)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>User Success Story</h2>
+            <div class="highlight">
+                <p>
+                    "The new dashboard transformed how our team trades. What used to take 10 minutes of clicking through reports now takes 10 seconds. We've spotted market opportunities we would have missed with the old system. It's become an essential tool for our operation."
+                </p>
+                <p style="margin-top: 1rem; color: #666;">
+                    — Senior Trader, Financial Services Client
+                </p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Need Financial Data Visualization?</h2>
+            <p>We build custom analytics solutions that turn data into actionable insights.</p>
+            <button onclick="alert('Contact our team to discuss your analytics needs!')">Schedule Demo</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Digitora - Digital Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>

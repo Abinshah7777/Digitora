@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Digitora</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .error-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+        }
+        .error-content {
+            max-width: 600px;
+        }
+        .error-content h1 {
+            font-size: 3rem;
+            color: #ff6464;
+            margin-bottom: 1rem;
+        }
+        .error-content p {
+            font-size: 1.1rem;
+            color: var(--text-color-dark);
+            margin-bottom: 2rem;
+        }
+        .error-details {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 4px;
+            text-align: left;
+            margin: 2rem 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .error-details pre {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <main>
+        <div class="container">
+            <div class="error-container">
+                <div class="error-content">
+                    <h1>⚠️ Oops! Something went wrong</h1>
+                    <p>We encountered an error while processing your request.</p>
+                    
+                    <div th:if="${error}" class="error-details">
+                        <strong>Error Details:</strong>
+                        <pre th:text="${error}"></pre>
+                    </div>
+
+                    <a th:href="@{/portfolio}" class="btn btn-primary">Back to Portfolio</a>
+                    <a th:href="@{/}" class="btn btn-secondary">Go Home</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
+</html>

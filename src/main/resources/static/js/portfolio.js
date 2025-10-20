@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     
     const portfolioGrid = document.getElementById('portfolio-grid');

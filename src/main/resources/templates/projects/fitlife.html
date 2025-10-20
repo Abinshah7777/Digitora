@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Fitness Tracker - Digitora Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section {
+            margin: 3rem 0;
+        }
+        .section h2 {
+            color: #f5576c;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #f5576c;
+            padding-bottom: 0.5rem;
+        }
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .highlight {
+            background: #fff5f7;
+            padding: 1.5rem;
+            border-left: 4px solid #f5576c;
+            margin: 1.5rem 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f5576c;
+        }
+        .stat-card .label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-item {
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .feature-item h3 {
+            color: #f5576c;
+            margin-bottom: 0.5rem;
+        }
+        .cta {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .cta button {
+            background: white;
+            color: #f5576c;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .cta button:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a th:href="@{/portfolio}" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <header>
+        <h1>FitLife Fitness Tracker App</h1>
+        <p>Your Personal AI-Powered Fitness Companion</p>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>
+                FitLife is a cross-platform mobile application designed to help users track workouts, nutrition, and fitness goals with intelligent AI-powered recommendations. The app provides a seamless experience on both iOS and Android with real-time synchronization and personalized coaching.
+            </p>
+            <div class="highlight">
+                <strong>Challenge:</strong> The fitness app market is crowded. We needed to create an app that stands out through intelligent insights, ease of use, and genuine value. The app had to work offline, sync seamlessly, and provide actionable recommendations.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Metrics</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="number">500K+</div>
+                    <div class="label">Active Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">4.8★</div>
+                    <div class="label">App Store Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">65%</div>
+                    <div class="label">Goal Completion Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">12 mins</div>
+                    <div class="label">Daily Average Usage</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Core Features</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>💪 Workout Tracking</h3>
+                    <p>Track 200+ exercise types with detailed metrics including sets, reps, weight, and time. Automatic form correction using AI vision.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🍎 Nutrition Logging</h3>
+                    <p>Database of 1M+ foods with barcode scanning. AI-powered meal recognition from photos.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🤖 AI Coaching</h3>
+                    <p>Personalized workout and nutrition recommendations based on your goals, fitness level, and progress.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📊 Smart Analytics</h3>
+                    <p>Visualize progress with custom charts, trend analysis, and predictive goal completion timelines.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>⌚ Wearable Integration</h3>
+                    <p>Connect with Apple Watch, Fitbit, Garmin, and other wearables for automatic heart rate and step tracking.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>👥 Social Features</h3>
+                    <p>Share achievements, join challenges, and compete with friends on leaderboards.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technology Stack</h2>
+            <p>
+                <strong>Mobile:</strong> React Native for cross-platform development, Native modules for iOS and Android<br>
+                <strong>Backend:</strong> Node.js with Express.js, GraphQL API for efficient data queries<br>
+                <strong>Database:</strong> MongoDB for flexible schema, Firebase for real-time sync<br>
+                <strong>AI/ML:</strong> TensorFlow Lite for on-device models, Python backend for ML pipeline<br>
+                <strong>Cloud:</strong> Google Cloud Platform with Cloud Functions for serverless processing
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>User Success Stories</h2>
+            <p>
+                Users have achieved remarkable results with FitLife:
+            </p>
+            <ul style="margin-left: 2rem; line-height: 2;">
+                <li>🎯 Average 18 lbs weight loss in first 3 months with structured goals</li>
+                <li>💪 32% increase in average workout consistency</li>
+                <li>⏰ 89% users report better time management with the app's scheduling feature</li>
+                <li>🎉 95% of users who complete 30-day challenges continue using the app</li>
+                <li>🏆 Thousands of users achieved their annual fitness goals</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>What Makes FitLife Different</h2>
+            <div class="highlight">
+                <p>
+                    Unlike generic fitness apps, FitLife combines three powerful elements:
+                </p>
+                <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                    <li><strong>Intelligence:</strong> AI learns your preferences and adapts recommendations daily</li>
+                    <li><strong>Simplicity:</strong> Intuitive design makes tracking effortless, not a chore</li>
+                    <li><strong>Community:</strong> Motivating features that keep you engaged and accountable</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Transform Your Fitness Journey</h2>
+            <p>Download FitLife today and get a personalized fitness plan created just for you.</p>
+            <button onclick="alert('Available on iOS App Store and Google Play Store!')">Download Now</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Digitora - Digital Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>

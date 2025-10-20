@@ -10,22 +10,18 @@ public class HomeController {
         System.out.println("<<<<<<<<<< HomeController has been loaded and is active! >>>>>>>>>>");
     }
 
-    // THIS IS THE CONTROL TEST FOR A WORKING URL
     @GetMapping("/")
     public String homePage() {
         System.out.println(">>>>>>>>>>>>>> / URL (Homepage) was called. THIS IS WORKING. >>>>>>>>>>>>>>");
         return "index";
     }
 
-    // THIS IS THE TEST FOR THE BROKEN URL
     @GetMapping("/services")
     public String servicesPage() {
-        // IF YOU DO NOT SEE THIS MESSAGE IN THE CONSOLE, THE BUILD IS BROKEN.
         System.out.println("!!!!!!!!!!!!!!!!!! /services URL WAS CALLED AND THIS METHOD IS RUNNING !!!!!!!!!!!!!!!!!!");
         return "services";
     }
 
-    // THE REST OF THE METHODS FOR COMPLETENESS
     @GetMapping("/portfolio")
     public String portfolioPage() {
         System.out.println("!!!!!!!!!!!!!!!!!! /portfolio URL WAS CALLED AND THIS METHOD IS RUNNING !!!!!!!!!!!!!!!!!!");
@@ -42,5 +38,54 @@ public class HomeController {
     public String aboutPage() {
         System.out.println("!!!!!!!!!!!!!!!!!! /about URL WAS CALLED AND THIS METHOD IS RUNNING !!!!!!!!!!!!!!!!!!");
         return "about";
+    }
+
+    // Project Case Study Pages
+    @GetMapping("/project/ecommerce")
+    public String ecommerceProject() {
+        System.out.println(">>>>>> E-commerce Project Page Called");
+        try {
+            return "projects/ecommerce";
+        } catch (Exception e) {
+            System.out.println("Error loading ecommerce project: " + e.getMessage());
+            e.printStackTrace();
+            return "error";
+        }
+    }
+
+    @GetMapping("/project/fitlife")
+    public String fitlifeProject() {
+        System.out.println(">>>>>> FitLife Project Page Called");
+        try {
+            return "projects/fitlife";
+        } catch (Exception e) {
+            System.out.println("Error loading fitlife project: " + e.getMessage());
+            e.printStackTrace();
+            return "error";
+        }
+    }
+
+    @GetMapping("/project/innovate")
+    public String innovateProject() {
+        System.out.println(">>>>>> Innovate Corp Project Page Called");
+        try {
+            return "projects/innovate";
+        } catch (Exception e) {
+            System.out.println("Error loading innovate project: " + e.getMessage());
+            e.printStackTrace();
+            return "error";
+        }
+    }
+
+    @GetMapping("/project/quantum")
+    public String quantumProject() {
+        System.out.println(">>>>>> Quantum Analytics Project Page Called");
+        try {
+            return "projects/quantum";
+        } catch (Exception e) {
+            System.out.println("Error loading quantum project: " + e.getMessage());
+            e.printStackTrace();
+            return "error";
+        }
     }
 }

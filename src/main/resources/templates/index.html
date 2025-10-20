@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digitora - Welcome</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
     <!-- ======================= Header & Navigation ======================= -->
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">Digitora</a>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
-    </header>
+    <header th:replace="~{fragments/header :: header}"></header>
 
     <!-- ======================= Main Content ======================= -->
     <main>
@@ -31,8 +20,8 @@
                 <p class="hero-subtitle">
                     We create beautiful, high-performing websites and mobile applications that drive results and grow your brand.
                 </p>
-                <a href="contact.html" class="btn btn-primary">Start a Project</a>
-                <a href="portfolio.html" class="btn btn-secondary">See Our Work</a>
+                <a th:href="@{/contact}" class="btn btn-primary">Start a Project</a>
+                <a th:href="@{/portfolio}" class="btn btn-secondary">See Our Work</a>
             </div>
         </section>
 
@@ -41,11 +30,7 @@
     </main>
 
     <!-- ======================= Footer ======================= -->
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2025 Digitora. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
 
 </body>
 </html>
