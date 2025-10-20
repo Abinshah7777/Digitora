@@ -70,8 +70,6 @@ To run this project locally, you'll need:
 ---
 
 ## Project Structure
-
-Directory structure:
 └── abinshah7777-digitora/
     ├── README.md
     ├── mvnw
@@ -153,4 +151,3 @@ Directory structure:
     └── .mvn/
         └── wrapper/
             └── maven-wrapper.properties
-
