@@ -30,4 +30,9 @@ public class ContactInquiry {
     protected void onCreate() {
         this.submissionDate = LocalDateTime.now();
     }
+
+    public void setUsername(String name2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setUsername'");
+    }
 }

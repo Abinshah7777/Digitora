@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const formObject = Object.fromEntries(formData.entries());
 
         // Send the data to the backend API using a POST request, with the full URL
-        fetch('/api/portfolio'), {
+        fetch('/api/contact', {            // <-- correct endpoint, no stray comma
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formObject),
-        }
+        })
         .then(response => {
             if (!response.ok) {
                 // If the server responds with an error status, throw an error

@@ -26,4 +26,9 @@ public class PortfolioItem {
     @ManyToOne // Defines a many-to-one relationship
     @JoinColumn(name = "category_id") // Specifies the foreign key column in this table
     private Category category;
+
+    public void setUsername(String name) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setUsername'");
+    }
 }

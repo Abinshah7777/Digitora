@@ -24,3 +24,8 @@ INSERT INTO portfolio_item (title, description, image_url, project_link, categor
 ('FitLife Fitness Tracker App', 'A cross-platform mobile application to help users track their workouts, nutrition, and fitness goals.', 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b', 'https://example.com/project2', 2),
 ('Innovate Corp Rebranding', 'A complete UI/UX and brand identity overhaul for a major B2B technology company, focusing on a clean and modern user experience.', 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e', 'https://example.com/project3', 3),
 ('Quantum Analytics Dashboard', 'A complex data visualization dashboard for a financial tech firm, providing real-time insights from multiple data sources.', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71', 'https://example.com/project4', 1);
+
+-- This ensures that the "ROLE_USER" exists in the database on startup.
+-- The INSERT IGNORE command prevents errors if the role already exists.
+INSERT IGNORE INTO roles (id, name) VALUES (1, 'ROLE_USER');
+INSERT IGNORE INTO roles (id, name) VALUES (2, 'ROLE_ADMIN');

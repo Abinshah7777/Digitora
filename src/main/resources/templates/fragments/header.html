@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+<header th:fragment="header">
+    <div class="container">
+        <nav>
+            <!-- The Logo is always visible -->
+            <a th:href="@{/}" class="logo">Digitora</a>
+
+            <div class="nav-links">
+
+                <!-- ===== LINKS FOR USERS WHO ARE NOT LOGGED IN ===== -->
+                <!-- The 'sec:authorize="isAnonymous()"' block is only rendered if the user is not authenticated. -->
+                <div sec:authorize="isAnonymous()">
+                    <a th:href="@{/login}" class="btn btn-secondary">Login</a>
+                </div>
+
+
+                <!-- ===== LINKS FOR USERS WHO ARE LOGGED IN ===== -->
+                <!-- The 'sec:authorize="isAuthenticated()"' block is only rendered if the user is authenticated. -->
+                <div sec:authorize="isAuthenticated()">
+                    <a th:href="@{/}">Home</a>
+                    <a th:href="@{/services}">Services</a>
+                    <a th:href="@{/portfolio}">Portfolio</a>
+                    <a th:href="@{/contact}">Contact</a>
+
+                    <!-- SECURE LOGOUT BUTTON -->
+                    <!-- Using a form for logout is more secure (prevents CSRF attacks). -->
+                    <form th:action="@{/logout}" method="post" style="display: inline-block; margin-left: 1rem;">
+                        <button type="submit" class="btn btn-secondary">Logout</button>
+                    </form>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</header>
+
+</body>
+</html>

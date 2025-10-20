@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Digitora</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Header remains at the top, outside the centering wrapper -->
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <!-- Use the new wrapper to center the login form -->
+    <main class="auth-page-wrapper">
+
+        <!-- Your original login box goes inside the wrapper -->
+        <div class="auth-container">
+            <h2 class="auth-title">Sign In</h2>
+
+            <!-- Login Error Message -->
+            <div th:if="${param.error}" class="auth-message error">
+                Invalid username or password.
+            </div>
+
+            <!-- Logout Success Message -->
+            <div th:if="${param.logout}" class="auth-message success">
+                You have been logged out successfully.
+            </div>
+
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+
+            <div class="auth-links">
+                <p>Don't have an account? <a th:href="@{/register}">Register here</a></p>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Footer remains at the bottom, outside the centering wrapper -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</body>
+</html>

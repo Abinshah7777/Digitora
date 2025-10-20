@@ -377,3 +377,25 @@ footer {
     font-size: 1.1rem; /* Make the role a bit bigger */
     color: var(--secondary-color); /* Use the highlight color for the role */
 }
+/* ============================================= */
+/* === Authentication Page Layout === */
+/* ============================================= */
+
+/* This is the full-screen flex container that will center its child. */
+.auth-page-wrapper {
+    display: flex;
+    align-items: center;        /* Vertically centers the login box */
+    justify-content: center;    /* Horizontally centers the login box */
+    min-height: 80vh;           /* Gives it height to make centering work */
+    padding: 2rem 1rem;         /* Adds padding on the sides for mobile */
+}
+
+/* This is the login box itself. It should have no positioning margin. */
+.auth-container {
+    max-width: 450px;
+    width: 100%;
+    padding: 2.5rem;
+    background-color: #112240;
+    border: 1px solid #ffffff1a;
+    border-radius: 4px;
+}

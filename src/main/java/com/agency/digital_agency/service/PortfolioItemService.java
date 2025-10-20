@@ -18,4 +18,9 @@ public class PortfolioItemService {
     public List<PortfolioItem> getAllPortfolioItems() {
         return portfolioItemRepository.findAll();
     }
+
+    public PortfolioItem savePortfolioItem(PortfolioItem portfolioItem) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'savePortfolioItem'");
+    }
 }
