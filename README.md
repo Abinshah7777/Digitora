@@ -71,5 +71,86 @@ To run this project locally, you'll need:
 
 ## Project Structure
 
-The project follows a standard Spring Boot layout, separating concerns into distinct packages.
-└── src/main/ ├── java/com/agency/digital_agency/ │ ├── DigitalAgencyApplication.java # Main application entry point │ ├── config/ # Spring Security and App configuration │ ├── controller/ # Handles HTTP requests (API & Web) │ ├── model/ # JPA entity classes (database models) │ ├── Repository/ # Spring Data JPA repository interfaces │ └── service/ # Business logic layer │ └── resources/ ├── application.properties # Main application configuration ├── data.sql # Initial data seeding ├── static/ # Static assets (CSS, JS) └── templates/ # Thymeleaf HTML templates ├── fragments/ # Reusable HTML parts (header, footer) └── projects/ # Specific project detail pages
+Directory structure:
+└── abinshah7777-digitora/
+    ├── README.md
+    ├── mvnw
+    ├── mvnw.cmd
+    ├── pom.xml
+    ├── src/
+    │   ├── main/
+    │   │   ├── java/
+    │   │   │   └── com/
+    │   │   │       └── agency/
+    │   │   │           └── digital_agency/
+    │   │   │               ├── DigitalAgencyApplication.java
+    │   │   │               ├── config/
+    │   │   │               │   ├── AppConfig.java
+    │   │   │               │   ├── HttpSecurity.java
+    │   │   │               │   └── SecurityConfig.java
+    │   │   │               ├── controller/
+    │   │   │               │   ├── AuthController.java
+    │   │   │               │   ├── CategoryController.java
+    │   │   │               │   ├── ContactInquiryController.java
+    │   │   │               │   ├── GlobalExceptionHandler.java
+    │   │   │               │   ├── HomeController.java
+    │   │   │               │   ├── PortfolioItemController.java
+    │   │   │               │   └── ServiceController.java
+    │   │   │               ├── model/
+    │   │   │               │   ├── Category.java
+    │   │   │               │   ├── ContactInquiry.java
+    │   │   │               │   ├── PortfolioItem.java
+    │   │   │               │   ├── Role.java
+    │   │   │               │   ├── Service.java
+    │   │   │               │   └── User.java
+    │   │   │               ├── Repository/
+    │   │   │               │   ├── CategoryRepository.java
+    │   │   │               │   ├── ContactInquiryRepository.java
+    │   │   │               │   ├── PortfolioItemRepository.java
+    │   │   │               │   ├── RoleRepository.java
+    │   │   │               │   ├── ServiceRepository.java
+    │   │   │               │   └── UserRepository.java
+    │   │   │               └── service/
+    │   │   │                   ├── CategoryService.java
+    │   │   │                   ├── ContactInquiryService.java
+    │   │   │                   ├── CustomUserDetailsService.java
+    │   │   │                   ├── PortfolioItemService.java
+    │   │   │                   ├── ServiceService.java
+    │   │   │                   └── UserService.java
+    │   │   └── resources/
+    │   │       ├── application.properties
+    │   │       ├── data.sql
+    │   │       ├── static/
+    │   │       │   ├── css/
+    │   │       │   │   └── style.css
+    │   │       │   └── js/
+    │   │       │       ├── contact.js
+    │   │       │       ├── portfolio.js
+    │   │       │       └── services.js
+    │   │       └── templates/
+    │   │           ├── about.html
+    │   │           ├── contact.html
+    │   │           ├── error.html
+    │   │           ├── index.html
+    │   │           ├── login.html
+    │   │           ├── portfolio.html
+    │   │           ├── register.html
+    │   │           ├── services.html
+    │   │           ├── fragments/
+    │   │           │   ├── footer.html
+    │   │           │   └── header.html
+    │   │           └── projects/
+    │   │               ├── ecommerce.html
+    │   │               ├── fitlife.html
+    │   │               ├── innovate.html
+    │   │               └── quantum.html
+    │   └── test/
+    │       └── java/
+    │           └── com/
+    │               └── agency/
+    │                   └── digital_agency/
+    │                       └── DigitalAgencyApplicationTests.java
+    └── .mvn/
+        └── wrapper/
+            └── maven-wrapper.properties
+
