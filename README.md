@@ -70,6 +70,7 @@ To run this project locally, you'll need:
 ---
 
 ## Project Structure
+```
 └── abinshah7777-digitora/
     ├── README.md
     ├── mvnw
@@ -151,3 +152,4 @@ To run this project locally, you'll need:
     └── .mvn/
         └── wrapper/
             └── maven-wrapper.properties
+```
