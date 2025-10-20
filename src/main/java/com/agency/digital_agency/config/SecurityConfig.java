@@ -27,20 +27,11 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(
-                    "/", 
-                    "/services", 
-                    "/portfolio", 
-                    "/contact", 
-                    "/about",
-                    "/project/**",
                     "/login", 
                     "/register",
                     "/css/**", 
                     "/js/**", 
-                    "/images/**",
-                    "/api/services",
-                    "/api/portfolio",
-                    "/api/categories"
+                    "/images/**"
                 ).permitAll()
                 .anyRequest().authenticated()
             )
